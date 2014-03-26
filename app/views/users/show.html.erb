@@ -5,5 +5,7 @@ First Name: <%= @user.fname %><br>
 Last Name : <%= @user.lname %><br>
 Email address : <%= @user.email %><br><br>
 
-<%= link_to "Delete account", method: :delete, confirm: "ARE YOU SURE YOU WANT TO DELETE YOUR ACCOUNT "   %>
+<%= link_to "Delete account", user_path(params[:id]), method: :delete, confirm: "ARE YOU SURE YOU WANT TO DELETE YOUR ACCOUNT "   %> <br><br>
+
+<%= link_to "Update Info" , edit_user_path  %>
 

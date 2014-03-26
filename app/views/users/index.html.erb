@@ -1,7 +1,9 @@
 <h1>This page displays all the Users </h1>
 
 
-<% @user.posts.each do |post| %>
-    <%= post.title %>
-    <%= post.content %>
-<% end %>
+ <% @users.each do |user| %>
+    First Name : <%= user.fname %><br>
+    Last Name : <%= user.lname %><br>
+    Email Address : <%= user.email %><br><br>
+
+ <% end %>
