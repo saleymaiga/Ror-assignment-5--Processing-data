@@ -1,0 +1,9 @@
+<h1>User profile page</h1>
+
+User <%= @user.id %>
+First Name: <%= @user.fname %><br>
+Last Name : <%= @user.lname %><br>
+Email address : <%= @user.email %><br><br>
+
+<%= link_to "Delete account", method: :delete, confirm: "ARE YOU SURE YOU WANT TO DELETE YOUR ACCOUNT "   %>
+
