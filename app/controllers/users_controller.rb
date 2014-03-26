@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   	redirect_to root_path
   	else
   		flash[:alert] = "there was a problem creating your account"	
+  		redirect_tonew_user_path
   	end
-  	redirect_to new_user_path
 
   end
 
