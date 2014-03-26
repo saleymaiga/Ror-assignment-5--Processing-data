@@ -5,6 +5,19 @@ class UsersController < ApplicationController
 
 
   def new
+  	@user = User.new
+  end
+
+  def create
+  	@user = User.new(params[:user])
+  	if @user.save
+  		flash[:notice] = "Welcome #{@user.fname}"
+  	redirect_to root_path
+  	else
+  		flash[:alert] = "there was a problem creating your account"	
+  	end
+  	redirect_to new_user_path
+
   end
 
 
@@ -28,14 +41,16 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   end
 
+
   def update
-  	@user = User.where(id: params[:id]).first
+  	@user = User.find(params[:id])
   	if @user.update_attributes(params[:user])
   		flash[:notice] = "Your account was updated successfully"
   	else
-  	    flash[:notice] = "There was a problem updating your account"	
+  	    flash[:notice] = "There was a problem updating your account"
+    end	
 
-  	
+	redirect_to user_path
   end
 end
 
