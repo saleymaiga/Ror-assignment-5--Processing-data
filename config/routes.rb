@@ -2,6 +2,7 @@ Myapp::Application.routes.draw do
 
      root "home#index"
 
+   
 
      
     
@@ -15,10 +16,10 @@ Myapp::Application.routes.draw do
 
       get "/posts" => "posts#posts"
 
-        # get "/log-in" => "sessions#new"
-        # post "/log-in" => "sessions#create", as: :log_in
+        get "/sessions/new" => "sessions#new"
+        post "/sessions/new" => "sessions#create" 
 
-        # get "/log-out" => "sessions#destroy", as: :log_out
+        delete "/sessions" => "sessions#destroy", as: :logout
 
          # get "/" => "home#index"
   
