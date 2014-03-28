@@ -1,11 +1,26 @@
 Myapp::Application.routes.draw do
 
-     root "users#index"
+     root "home#index"
 
+
+     
+    
+    
      resources :users do
       resources :posts
 
      end
+
+     resources :sessions
+
+      get "/posts" => "posts#posts"
+
+        # get "/log-in" => "sessions#new"
+        # post "/log-in" => "sessions#create", as: :log_in
+
+        # get "/log-out" => "sessions#destroy", as: :log_out
+
+         # get "/" => "home#index"
   
 
 

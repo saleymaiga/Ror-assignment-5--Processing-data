@@ -1,0 +1,9 @@
+<h1>Post from all users</h1>
+
+<% @posts.each do |post| %>
+  Post :<%= post.id %><br>
+  Title  :<%= post.title %><br>
+  Content :<%= post.content %><br><br><hr>
+
+
+<% end %>

@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
+
   def index
   	@users = User.all
+  end
+
+  def signin
+  	
   end
 
 
@@ -15,7 +20,7 @@ class UsersController < ApplicationController
   	redirect_to root_path
   	else
   		flash[:alert] = "there was a problem creating your account"	
-  		redirect_tonew_user_path
+  		redirect_to :back
   	end
 
   end
@@ -33,7 +38,7 @@ class UsersController < ApplicationController
   	else
   	    flash[:alert] = "Oups! There was a problem deleting your account."
   	end
-  	redirect_to "/users"
+  	redirect_to root_path
   end
 
 
@@ -50,7 +55,7 @@ class UsersController < ApplicationController
   	    flash[:notice] = "There was a problem updating your account"
     end	
 
-	redirect_to user_path
+	redirect_to user_path(@user)
   end
 end
 
