@@ -2,11 +2,7 @@ Myapp::Application.routes.draw do
 
      root "home#index"
 
-   
-
-     
-    
-    
+  
      resources :users do
       resources :posts
 
@@ -14,14 +10,14 @@ Myapp::Application.routes.draw do
 
      resources :sessions
 
-      get "/posts" => "posts#posts"
+     get "/posts" => "posts#posts"
 
-        get "/sessions/new" => "sessions#new"
-        post "/sessions/new" => "sessions#create" 
+     get "/sessions/new" => "sessions#new"
+     post "/sessions/new" => "sessions#create" 
 
-        delete "/sessions" => "sessions#destroy", as: :logout
+     delete "/sessions" => "sessions#destroy", as: :logout
 
-         # get "/" => "home#index"
+    
   
 
 
