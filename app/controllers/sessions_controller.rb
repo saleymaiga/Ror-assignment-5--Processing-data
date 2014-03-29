@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
 	    redirect_to user_path(@user)
 	 else
-	 	flash[:alert] = "There was a problem signing you in. Please sign up if you don't have an account"
+	 	flash[:alert] = "There was a problem signing you in."
 		redirect_to root_path
 	 end
 
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    flash[:notice]= "You've been logout successfully"	
+    flash[:notice]= "You've been logged out successfully"	
     redirect_to new_session_path
   end
 
