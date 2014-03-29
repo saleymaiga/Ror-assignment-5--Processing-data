@@ -14,9 +14,9 @@
 	<% if flash[:alert] %>
 	   <%= flash[:alert] %>	
 	<% end %>
-	<%= link_to("logout" , logout_path, method: :delete ) if current_user %>
+	<%= link_to("logout" , logout_path, method: :delete, confirm: "CONFIRM LOGOUT") if current_user %>
 
-<%= yield %>
+    <%= yield %>
 
 </body>
 </html>

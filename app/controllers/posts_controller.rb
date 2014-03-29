@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   	@post = Post.new(params[:post])
   	@post.user_id = params[:user_id]
   	if @post.save
-  		flash[:notice] = "Post was created successfully"
+  		flash[:notice] = "Your post was created successfully"
   		redirect_to user_post_path(@post.user, @post)
   	else
   		flash[:notice]= "There was a problem creating that post"
@@ -60,7 +60,7 @@ class PostsController < ApplicationController
   	if  @post.update_attributes(params[:post])
   		flash[:notice] = "Your post was updated successfully"    
   	else
-  		flash[:notice] = "There was a problem editig that post"
+  		flash[:notice] = "There was a problem editing that post"
   	end
   	redirect_to  user_post_path(@post.user, @post)
   end

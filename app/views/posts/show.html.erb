@@ -1,8 +1,8 @@
 <h1> Show a post</h1>
 
 <%= @post.title %><br>
-<%= @post.content %>
+<%= @post.content %><br><br>
 
-<%= link_to "edit post" , edit_user_post_path(@post.user, @post)  %>
+<%= link_to "edit post" , edit_user_post_path(@post.user, @post)  %><br>
 
-<%= link_to "Delete this post" , user_post_path(@post.user, @post), method: :delete%>
+<%= link_to "Delete this post" , user_post_path(@post.user, @post), method: :delete, confirm: "ARE YOU SURE YOU WANT TO DELETE THIS POST ?" %>
